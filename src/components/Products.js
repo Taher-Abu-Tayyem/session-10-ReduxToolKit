@@ -2,7 +2,8 @@
 
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { addProduct, fetchProducts } from "../store/actions/products-action"
+import { addProduct, fetchProducts } from "../rtk/slices/product-slice"
+// import { addProduct, fetchProducts } from "../store/actions/products-action"
 
  
  const Products = () => {
@@ -10,14 +11,15 @@ import { addProduct, fetchProducts } from "../store/actions/products-action"
     const dispatch=useDispatch()
     console.log(products)
     useEffect(()=>{
-        dispatch(fetchProducts())
+         dispatch(fetchProducts());
+         
     },[])
    return (
      <>
          <h1>Products</h1>
-         <button onClick={()=>dispatch(addProduct({name:2,city:'product2'}))}>addProduct</button>
+         <button onClick={()=>dispatch(addProduct({id:2,title:'product2'}))}>addProduct</button>
          {
-            products.map(product => (<h2 key={product.name}>{product.city}</h2>))
+            products.map((product) => (<h2 key={product.id}>{product.title}</h2>))
          }
      </>
    )

@@ -14,7 +14,7 @@ function App() {
       <p>bank balance :{state}</p>
       <button onClick={()=>dispatch(withdraw(50))} >withdraw</button>
       <button  onClick={()=>dispatch(deposite(50))} >deposite</button>
-      {/* <Products/> */}
+      <Products/> 
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const bankSlice = createSlice({
     initialState:1000,
-    name: 'counter',
+    name: 'bankSlice',
     reducers: {
       withdraw: (state,action) => {
        return state= state - action.payload
